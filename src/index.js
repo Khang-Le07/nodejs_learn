@@ -8,10 +8,10 @@ const route = require('./routes');
 app.use(express.static(path.join(__dirname, 'public')));
 //Template Engine
 app.engine(
-  'hbs',
-  handlebars({
-    extname: '.hbs',
-  }),
+    'hbs',
+    handlebars({
+        extname: '.hbs',
+    }),
 );
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
@@ -21,5 +21,5 @@ app.use(morgan('combined'));
 route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at http://localhost:${port}`);
 });
