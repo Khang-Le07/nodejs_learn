@@ -21,7 +21,9 @@ app.engine(
     }),
 );
 app.use(methodOverride('_method'))
-app.use (express.urlencoded())
+app.use (express.urlencoded({
+    extended: true
+}))
 app.use(express.json())
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
