@@ -54,6 +54,18 @@ class CourseController {
             .then(()=>res.redirect('back'))
             .catch(next)
     }
+    //[post]
+    handleFromAction(req,res,next){
+        switch(req.body.action){
+            case 'delete':
+                Course.delete({_id: {$in: req.body.coursesid}})
+                .then(()=>res.redirect('back'))
+                .catch(next)
+            break;
+            default:
+                res.json({message:'Khong hop le'})
+        }
+    }
 }
 
 
